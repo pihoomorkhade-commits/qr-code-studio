@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+uploads/
+qr_history.db
+generated_qr/
+app copy.py

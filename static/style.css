@@ -1,0 +1,722 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #0b1020;
+    --card: #131b30;
+    --border: #26314b;
+    --text: #f4f6ff;
+    --muted: #9ba8c2;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 0%, #20224a 0%, transparent 45%),
+        var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.navbar {
+    min-height: 76px;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.brand > span:last-child {
+    color: #a78bfa;
+}
+
+.brand-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+    border-radius: 10px;
+    color: white;
+}
+
+.status {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #34d399;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 76px 15px 55px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 30px;
+    padding: 6px 13px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #a78bfa, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background: linear-gradient(145deg, #161f36, #11182a);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #514b85;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+}
+
+.purple {
+    background: rgba(139, 92, 246, 0.16);
+    color: #c4b5fd;
+}
+
+.blue {
+    background: rgba(56, 189, 248, 0.13);
+    color: #7dd3fc;
+}
+
+.tag {
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.card h2 {
+    font-size: 23px;
+    margin: 7px 0 10px;
+    letter-spacing: -0.6px;
+}
+
+.description {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 45px;
+    margin-bottom: 26px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+input[type="text"],
+input[type="file"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    color: var(--text);
+    background: #0b1222;
+    border: 1px solid #303c58;
+    border-radius: 10px;
+    margin-bottom: 17px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    outline: 2px solid rgba(139, 92, 246, 0.5);
+    border-color: var(--purple);
+}
+
+input[type="file"]::file-selector-button {
+    background: #293550;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.primary-button,
+.download-button {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: white;
+    background: linear-gradient(100deg, #7c3aed, #6366f1);
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.blue-button {
+    background: linear-gradient(100deg, #0284c7, #2563eb);
+}
+
+.primary-button:hover,
+.download-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 17px;
+}
+
+.qr-preview {
+    margin-top: 25px;
+    padding: 20px;
+    text-align: center;
+    background: #0b1222;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.qr-preview img {
+    display: block;
+    width: 190px;
+    max-width: 100%;
+    height: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 auto 12px;
+}
+
+.qr-preview p {
+    color: #a7f3d0;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.download-button {
+    background: #263550;
+    border: 1px solid #3b4b6b;
+}
+
+.message {
+    padding: 17px 20px;
+    margin: 0 auto 25px;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.message p {
+    margin-top: 7px;
+}
+
+.success {
+    color: #bbf7d0;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.error {
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 25px 10px 35px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer span {
+    display: block;
+    margin-top: 4px;
+    color: #74819b;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .status {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 55px 5px 38px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .tools {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}
+
+
+#camera-view {
+    width: 100%;
+    max-width: 420px;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#camera-view video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.camera-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.camera-buttons button {
+    flex: 1;
+}
+
+.camera-buttons button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+#camera-result[hidden] {
+    display: none;
+}
+
+#camera-result {
+    margin-top: 16px;
+}
+
+#camera-text {
+    overflow-wrap: anywhere;
+}
+
+
+/* ===== PROFESSIONAL QR TOOL CARDS ===== */
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+    margin: 40px auto;
+    width: 100%;
+}
+
+/* Consistent card outline and shape */
+.tools .card {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 30px;
+    border: 1px solid rgba(139, 125, 255, 0.28);
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        rgba(24, 28, 55, 0.98),
+        rgba(15, 19, 39, 0.98)
+    );
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease,
+                box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+/* Subtle professional hover effect */
+.tools .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 125, 255, 0.75);
+    box-shadow: 0 18px 40px rgba(75, 65, 180, 0.18);
+}
+
+/* Consistent headings and descriptions */
+.tools .card h2 {
+    margin: 0;
+    font-size: 23px;
+    line-height: 1.35;
+    color: #ffffff;
+}
+
+.tools .card .description {
+    margin: 0 0 8px;
+    color: #b9c2dc;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Consistent form spacing */
+.tools .card form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+}
+
+.tools .card input[type="text"],
+.tools .card input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.tools .card button {
+    max-width: 100%;
+    align-self: stretch;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-weight: 600;
+}
+
+/* Keep the live scanner in its own full-width row */
+.tools .card:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+/* Make the camera preview neat */
+#camera-view {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    overflow: hidden;
+    border: 1px solid rgba(139, 125, 255, 0.3);
+    border-radius: 16px;
+    background: #090d1c;
+}
+
+#camera-view video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+.tools .card .camera-buttons {
+    width: 100%;
+    max-width: 500px;
+    margin: 8px auto;
+}
+
+/* Mobile and tablet layout */
+@media (max-width: 760px) {
+    .tools {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tools .card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .tools .card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+}
+
+/* ===== FINAL PROFESSIONAL QR CARD LAYOUT ===== */
+
+.tools {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    align-items: stretch;
+}
+
+.tools .card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 28px;
+    border: 1px solid rgba(167, 139, 250, 0.3) !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, #1b2340, #12182e) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tools .card:hover {
+    transform: translateY(-4px);
+    border-color: #a78bfa !important;
+}
+
+.tools .card h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.tools .card:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+#camera-view {
+    width: 100%;
+    max-width: 500px;
+    margin: 12px auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #090d1c;
+}
+
+#camera-view video {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+@media (max-width: 760px) {
+    .tools {
+        grid-template-columns: 1fr !important;
+    }
+
+    .tools .card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .tools .card {
+        padding: 22px;
+    }
+}
+
+/* ===== FIX LIVE QR SCANNER CARD ===== */
+
+.tools .card:nth-child(3) {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.tools .card:nth-child(3) form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#camera-view {
+    width: 100%;
+    max-width: 600px;
+    min-height: 250px;
+    margin: 16px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#camera-view video,
+#camera-view canvas {
+    max-width: 100% !important;
+}
+
+.tools .card:nth-child(3) .camera-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin: 12px auto;
+    box-sizing: border-box;
+}
+
+.tools .card:nth-child(3) .camera-buttons button {
+    flex: 1 1 180px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .tools .card:nth-child(3) .camera-buttons {
+        flex-direction: column;
+    }
+
+    .tools .card:nth-child(3) .camera-buttons button {
+        flex: 1 1 auto;
+    }
+}
+
+
+/* Fix Live QR Scanner layout */
+
+.tools .card:nth-child(3) {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#camera-view {
+    width: 100%;
+    max-width: 600px;
+    min-height: 250px;
+    margin: 16px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#camera-view video,
+#camera-view canvas {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.tools .card:nth-child(3) .camera-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin: 16px auto;
+    box-sizing: border-box;
+}
+
+.tools .card:nth-child(3) .camera-buttons button {
+    flex: 1 1 180px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .tools .card:nth-child(3) .camera-buttons {
+        flex-direction: column;
+    }
+
+    .tools .card:nth-child(3) .camera-buttons button {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+/* Keep the History button at the top-right */
+.navbar .history-button {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}

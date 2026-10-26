@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR History | QR Code Studio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>QR Code Studio</h1>
+        <a href="/">Back to Home</a>
+    </header>
+
+    <main class="history-container">
+        <h1>QR Code History</h1>
+        <p>Your previously generated and detected QR codes.</p>
+
+        {% if records %}
+        <div class="history-list">
+            {% for item in records %}
+            <article class="card history-card">
+                <h2>{{ item['action'] }} QR Code</h2>
+                <p><strong>Content:</strong> {{ item['content'] }}</p>
+                <p><strong>Date:</strong> {{ item['created_at'] }}</p>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <article class="card">
+            <h2>No history yet</h2>
+            <p>Generate a QR code or scan one to see your history here.</p>
+        </article>
+        {% endif %}
+    </main>
+
+</body>
+</html>
